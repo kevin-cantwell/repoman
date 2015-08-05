@@ -85,9 +85,9 @@ func WrapMarkdownHTML(markdown []byte) []byte {
     <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144.png">
     <meta property="fb:app_id" content="1401488693436528">
 
-      <meta content="@github" name="twitter:site" /><meta content="summary" name="twitter:card" /><meta content="timehop/wiki" name="twitter:title" /><meta content="Contribute to wiki development by creating an account on GitHub." name="twitter:description" /><meta content="https://avatars1.githubusercontent.com/u/1259053?v=3&amp;s=400" name="twitter:image:src" />
-      <meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="https://avatars1.githubusercontent.com/u/1259053?v=3&amp;s=400" property="og:image" /><meta content="timehop/wiki" property="og:title" /><meta content="https://github.com/timehop/wiki" property="og:url" /><meta content="Contribute to wiki development by creating an account on GitHub." property="og:description" />
-      <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+    <meta content="@github" name="twitter:site" /><meta content="summary" name="twitter:card" /><meta content="timehop/wiki" name="twitter:title" /><meta content="Contribute to wiki development by creating an account on GitHub." name="twitter:description" /><meta content="https://avatars1.githubusercontent.com/u/1259053?v=3&amp;s=400" name="twitter:image:src" />
+    <meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="https://avatars1.githubusercontent.com/u/1259053?v=3&amp;s=400" property="og:image" /><meta content="timehop/wiki" property="og:title" /><meta content="https://github.com/timehop/wiki" property="og:url" /><meta content="Contribute to wiki development by creating an account on GitHub." property="og:description" />
+    <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
     <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
     <link rel="assets" href="https://assets-cdn.github.com/">
     <link rel="web-socket" href="wss://live.github.com/_sockets/MzA3ODY0OjRlODUzZDljOTc3N2Y3M2QzNWFkYjJiYWQzM2ZhOWQzOjUwNmNlZDE5MmU1MTE5ZDJjMGZjYWYyYjNjNmM0ZDYzYTY3MjMyZDZjNzI5NjY1NjUyMDIyNWY4MzRlNzljMTc=--5ad2af2c625c426ae0002bdbb9fd038af2a8e44a">
@@ -98,23 +98,23 @@ func WrapMarkdownHTML(markdown []byte) []byte {
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="selected-link" value="repo_source" data-pjax-transient>
 
-        <meta name="google-analytics" content="UA-3769691-2">
+    <meta name="google-analytics" content="UA-3769691-2">
 
     <meta content="collector.githubapp.com" name="octolytics-host" /><meta content="collector-cdn.github.com" name="octolytics-script-host" /><meta content="github" name="octolytics-app-id" /><meta content="6C06CA4C:0A7D:BDD5980:55C1643B" name="octolytics-dimension-request_id" /><meta content="307864" name="octolytics-actor-id" /><meta content="kevin-cantwell" name="octolytics-actor-login" /><meta content="54a9e99ce298168945c2912a74c8a2adda41e1f8fa5be66ac3aaadef0bc0a10e" name="octolytics-actor-hash" />
     <meta content="/private/private/blob/show" data-pjax-transient="true" name="analytics-location" />
     <meta content="Rails, view, blob#show" data-pjax-transient="true" name="analytics-event" />
     <meta class="js-ga-set" name="dimension1" content="Logged In">
-      <meta class="js-ga-set" name="dimension4" content="Current repo nav">
+    <meta class="js-ga-set" name="dimension4" content="Current repo nav">
     <meta name="is-dotcom" content="true">
-        <meta name="hostname" content="github.com">
+    <meta name="hostname" content="github.com">
     <meta name="user-login" content="kevin-cantwell">
 
-      <link rel="icon" sizes="any" mask href="https://assets-cdn.github.com/pinned-octocat.svg">
-      <meta name="theme-color" content="#4078c0">
-      <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+    <link rel="icon" sizes="any" mask href="https://assets-cdn.github.com/pinned-octocat.svg">
+    <meta name="theme-color" content="#4078c0">
+    <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
 
     <meta content="authenticity_token" name="csrf-param" />
-<meta content="T6UAYcu/kk7ROPCtRj+IeFJX1g1vxNVcxhs85+tWQeC33xRw3ZX7vU90YDAO4nMdMr656WYKA4R6B5MvbGHBug==" name="csrf-token" />
+    <meta content="T6UAYcu/kk7ROPCtRj+IeFJX1g1vxNVcxhs85+tWQeC33xRw3ZX7vU90YDAO4nMdMr656WYKA4R6B5MvbGHBug==" name="csrf-token" />
     
 
     <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github/index-a6099c44cba81e3cc01a25d5aad205f2dd86c56ad656d0ee72761a3db28828c5.css" media="all" rel="stylesheet" />
@@ -126,172 +126,23 @@ func WrapMarkdownHTML(markdown []byte) []byte {
     <meta http-equiv="x-pjax-version" content="7b3fb0c762b1609124fa6ce9de586ac0">
 
       
-  <meta name="description" content="Contribute to wiki development by creating an account on GitHub.">
-  <meta name="go-import" content="github.com/timehop/wiki git https://github.com/timehop/wiki.git">
+    <meta name="description" content="Contribute to wiki development by creating an account on GitHub.">
+    <meta name="go-import" content="github.com/timehop/wiki git https://github.com/timehop/wiki.git">
 
-  <meta content="1259053" name="octolytics-dimension-user_id" /><meta content="timehop" name="octolytics-dimension-user_login" /><meta content="39162096" name="octolytics-dimension-repository_id" /><meta content="timehop/wiki" name="octolytics-dimension-repository_nwo" /><meta content="false" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="39162096" name="octolytics-dimension-repository_network_root_id" /><meta content="timehop/wiki" name="octolytics-dimension-repository_network_root_nwo" />
-  <link href="https://github.com/timehop/wiki/commits/master.atom?token=AASymJHRgilt7cPxQ38mSBuM6861rDr6ks6zzqTLwA%3D%3D" rel="alternate" title="Recent Commits to wiki:master" type="application/atom+xml">
-</head>
+    <meta content="1259053" name="octolytics-dimension-user_id" /><meta content="timehop" name="octolytics-dimension-user_login" /><meta content="39162096" name="octolytics-dimension-repository_id" /><meta content="timehop/wiki" name="octolytics-dimension-repository_nwo" /><meta content="false" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="39162096" name="octolytics-dimension-repository_network_root_id" /><meta content="timehop/wiki" name="octolytics-dimension-repository_network_root_nwo" />
+    <link href="https://github.com/timehop/wiki/commits/master.atom?token=AASymJHRgilt7cPxQ38mSBuM6861rDr6ks6zzqTLwA%3D%3D" rel="alternate" title="Recent Commits to wiki:master" type="application/atom+xml">
+  </head>
 
 
   <body class="logged_in  env-production macintosh vis-private page-blob">
-    <a href="#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
     <div class="wrapper">
-      
-      
-      
-
-
-
         <div class="header header-logged-in true" role="banner">
-  <div class="container clearfix">
-
-    <a class="header-logo-invertocat" href="https://github.com/" data-hotkey="g d" aria-label="Homepage" data-ga-click="Header, go to dashboard, icon:logo">
-  <span class="mega-octicon octicon-mark-github"></span>
-</a>
-
-
-      <div class="site-search repo-scope js-site-search" role="search">
-          <form accept-charset="UTF-8" action="/timehop/wiki/search" class="js-site-search-form" data-global-search-url="/search" data-repo-search-url="/timehop/wiki/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
-  <label class="js-chromeless-input-container form-control">
-    <div class="scope-badge">This repository</div>
-    <input type="text"
-      class="js-site-search-focus js-site-search-field is-clearable chromeless-input"
-      data-hotkey="s"
-      name="q"
-      placeholder="Search"
-      aria-label="Search this repository"
-      data-global-scope-placeholder="Search GitHub"
-      data-repo-scope-placeholder="Search"
-      tabindex="1"
-      autocapitalize="off">
-  </label>
-</form>
-      </div>
-
-      <ul class="header-nav left" role="navigation">
-        <li class="header-nav-item">
-          <a href="/pulls" class="js-selected-navigation-item header-nav-link" data-ga-click="Header, click, Nav menu - item:pulls context:user" data-hotkey="g p" data-selected-links="/pulls /pulls/assigned /pulls/mentioned /pulls">
-            Pull requests
-</a>        </li>
-        <li class="header-nav-item">
-          <a href="/issues" class="js-selected-navigation-item header-nav-link" data-ga-click="Header, click, Nav menu - item:issues context:user" data-hotkey="g i" data-selected-links="/issues /issues/assigned /issues/mentioned /issues">
-            Issues
-</a>        </li>
-          <li class="header-nav-item">
-            <a class="header-nav-link" href="https://gist.github.com/" data-ga-click="Header, go to gist, text:gist">Gist</a>
-          </li>
-      </ul>
-
-    
-<ul class="header-nav user-nav right" id="user-links">
-  <li class="header-nav-item">
-      <span class="js-socket-channel js-updatable-content"
-        data-channel="notification-changed:kevin-cantwell"
-        data-url="/notifications/header">
-      <a href="/notifications" aria-label="You have unread notifications" class="header-nav-link notification-indicator tooltipped tooltipped-s" data-ga-click="Header, go to notifications, icon:unread" data-hotkey="g n">
-          <span class="mail-status unread"></span>
-          <span class="octicon octicon-inbox"></span>
-</a>  </span>
-
-  </li>
-
-  <li class="header-nav-item dropdown js-menu-container">
-    <a class="header-nav-link tooltipped tooltipped-s js-menu-target" href="/new"
-       aria-label="Create new…"
-       data-ga-click="Header, create new, icon:add">
-      <span class="octicon octicon-plus left"></span>
-      <span class="dropdown-caret"></span>
-    </a>
-
-    <div class="dropdown-menu-content js-menu-content">
-      <ul class="dropdown-menu dropdown-menu-sw">
-        
-<a class="dropdown-item" href="/new" data-ga-click="Header, create new repository">
-  New repository
-</a>
-
-
-  <a class="dropdown-item" href="/organizations/new" data-ga-click="Header, create new organization">
-    New organization
-  </a>
-
-  <div class="dropdown-divider"></div>
-  <div class="dropdown-header">
-    <span title="timehop">This organization</span>
-  </div>
-  <a class="dropdown-item" href="/orgs/timehop/invitations/new" data-ga-click="Header, invite someone">
-    Invite someone
-  </a>
-  <a class="dropdown-item" href="/orgs/timehop/new-team" data-ga-click="Header, create new team">
-    New team
-  </a>
-  <a class="dropdown-item" href="/organizations/timehop/repositories/new" data-ga-click="Header, create new organization repository, icon:repo">
-    New repository
-  </a>
-
-
-  <div class="dropdown-divider"></div>
-  <div class="dropdown-header">
-    <span title="timehop/wiki">This repository</span>
-  </div>
-    <a class="dropdown-item" href="/timehop/wiki/issues/new" data-ga-click="Header, create new issue">
-      New issue
-    </a>
-    <a class="dropdown-item" href="/timehop/wiki/settings/collaboration" data-ga-click="Header, create new collaborator">
-      New collaborator
-    </a>
-
-      </ul>
-    </div>
-  </li>
-
-  <li class="header-nav-item dropdown js-menu-container">
-    <a class="header-nav-link name tooltipped tooltipped-s js-menu-target" href="/kevin-cantwell"
-       aria-label="View profile and more"
-       data-ga-click="Header, show menu, icon:avatar">
-      <img alt="@kevin-cantwell" class="avatar" height="20" src="https://avatars2.githubusercontent.com/u/307864?v=3&amp;s=40" width="20" />
-      <span class="dropdown-caret"></span>
-    </a>
-
-    <div class="dropdown-menu-content js-menu-content">
-      <div class="dropdown-menu dropdown-menu-sw">
-        <div class="dropdown-header header-nav-current-user css-truncate">
-          Signed in as <strong class="css-truncate-target">kevin-cantwell</strong>
+          <div class="container clearfix">
+            <a class="header-logo-invertocat" href="https://github.com/" data-hotkey="g d" aria-label="Homepage" data-ga-click="Header, go to dashboard, icon:logo">
+              <span class="mega-octicon octicon-mark-github"></span>
+            </a>
+          </div>
         </div>
-        <div class="dropdown-divider"></div>
-
-        <a class="dropdown-item" href="/kevin-cantwell" data-ga-click="Header, go to profile, text:your profile">
-          Your profile
-        </a>
-        <a class="dropdown-item" href="/stars" data-ga-click="Header, go to starred repos, text:your stars">
-          Your stars
-        </a>
-        <a class="dropdown-item" href="/explore" data-ga-click="Header, go to explore, text:explore">
-          Explore
-        </a>
-        <a class="dropdown-item" href="https://help.github.com" data-ga-click="Header, go to help, text:help">
-          Help
-        </a>
-        <div class="dropdown-divider"></div>
-
-        <a class="dropdown-item" href="/settings/profile" data-ga-click="Header, go to settings, icon:settings">
-          Settings
-        </a>
-
-        <form accept-charset="UTF-8" action="/logout" class="logout-form" data-form-nonce="08775a3354e7c6e73c74f48b232de5d7f4658854" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="NEfX6LATRuyGbAcZF6h2FhP3PzmRLJIDMaLXQfDUjdIsv5KLPj8FMTIWpZIRohcjYTk/OLg4JRQd4BcfenmjGg==" /></div>
-          <button class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
-            Sign out
-          </button>
-</form>      </div>
-    </div>
-  </li>
-</ul>
-
-
-    
-  </div>
-</div>
 
         
 
