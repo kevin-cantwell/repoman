@@ -156,148 +156,71 @@ func WrapMarkdownHTML(markdown []byte) []byte {
                   </div>
                 </div>
 
-
-  <div class="commit file-history-tease">
-    <div class="file-history-tease-header">
-        <img alt="@kevin-cantwell" class="avatar" height="24" src="https://avatars0.githubusercontent.com/u/307864?v=3&amp;s=48" width="24" />
-        <span class="author"><a href="/kevin-cantwell" rel="contributor">kevin-cantwell</a></span>
-        <time datetime="2015-07-16T19:30:27Z" is="relative-time">Jul 16, 2015</time>
-        <div class="commit-title">
-            <a href="/timehop/wiki/commit/3e59cb53106f9c1b169a8e6c4605fb1fcf9c25f6" class="message" data-pjax="true" title="Specify clubhouse integration">Specify clubhouse integration</a>
-        </div>
-    </div>
-
-    <div class="participation">
-      <p class="quickstat">
-        <a href="#blob_contributors_box" rel="facebox">
-          <strong>1</strong>
-           contributor
-        </a>
-      </p>
-      
-    </div>
-    <div id="blob_contributors_box" style="display:none">
-      <h2 class="facebox-header">Users who have contributed to this file</h2>
-      <ul class="facebox-user-list">
-          <li class="facebox-user-list-item">
-            <img alt="@kevin-cantwell" height="24" src="https://avatars0.githubusercontent.com/u/307864?v=3&amp;s=48" width="24" />
-            <a href="/kevin-cantwell">kevin-cantwell</a>
-          </li>
-      </ul>
-    </div>
-  </div>
-
-<div class="file">
-  <div class="file-header">
-    <div class="file-actions">
-
-      <div class="btn-group">
-        <a href="/timehop/wiki/raw/master/README.md" class="btn btn-sm " id="raw-url">Raw</a>
-          <a href="/timehop/wiki/blame/master/README.md" class="btn btn-sm js-update-url-with-hash">Blame</a>
-        <a href="/timehop/wiki/commits/master/README.md" class="btn btn-sm " rel="nofollow">History</a>
-      </div>
-
-        <a class="octicon-btn tooltipped tooltipped-nw"
-           href="https://mac.github.com"
-           aria-label="Open this file in GitHub for Mac"
-           data-ga-click="Repository, open with desktop, type:mac">
-            <span class="octicon octicon-device-desktop"></span>
-        </a>
-
-            <form accept-charset="UTF-8" action="/timehop/wiki/edit/master/README.md" class="inline-form" data-form-nonce="08775a3354e7c6e73c74f48b232de5d7f4658854" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="QnBOsA9t9Hh6xUd5CY3HrRuwwEMI6LZfCOf54LCrnOe7Dp/Ab1zC299LmjbbbOzww3xe3Crrg89YeupysmENHA==" /></div>
-              <button class="octicon-btn tooltipped tooltipped-n" type="submit" aria-label="Edit this file" data-hotkey="e" data-disable-with>
-                <span class="octicon octicon-pencil"></span>
-              </button>
-</form>
-          <form accept-charset="UTF-8" action="/timehop/wiki/delete/master/README.md" class="inline-form" data-form-nonce="08775a3354e7c6e73c74f48b232de5d7f4658854" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="xQjLFJvMxhNUFegbHaQHDIGE7xyTO3+H/mLEcS7LFblLRL3S+Z391ZUfxumfnWRMI0RbAgRVQ/IBzVrNK9m0jQ==" /></div>
-            <button class="octicon-btn octicon-btn-danger tooltipped tooltipped-n" type="submit" aria-label="Delete this file" data-disable-with>
-              <span class="octicon octicon-trashcan"></span>
-            </button>
-</form>    </div>
-
-    <div class="file-info">
-        56 lines (35 sloc)
-        <span class="file-info-divider"></span>
-      3.749 kB
-    </div>
-  </div>
-  
-  <div id="readme" class="blob instapaper_body">
-    <article class="markdown-body entry-content" itemprop="mainContentOfPage">
-` + string(markdown) + `
-    </article>
-  </div>
-
-</div>
-
-<a href="#jump-to-line" rel="facebox[.linejump]" data-hotkey="l" style="display:none">Jump to Line</a>
-<div id="jump-to-line" style="display:none">
-  <form accept-charset="UTF-8" action="" class="js-jump-to-line-form" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
-    <input class="linejump-input js-jump-to-line-field" type="text" placeholder="Jump to line&hellip;" aria-label="Jump to line" autofocus>
-    <button type="submit" class="btn">Go</button>
-</form></div>
-
+                <div class="file">
+                  <div class="file-header">
+                    <div class="file-actions">
+                    </div>
+                    <div class="file-info">
+                        &nbsp;
+                    </div>
+                  </div>
+                  <div id="readme" class="blob instapaper_body">
+                    <article class="markdown-body entry-content" itemprop="mainContentOfPage">
+                ` + string(markdown) + `
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-backdrop"></div>
           </div>
         </div>
-        <div class="modal-backdrop"></div>
-      </div>
-  </div>
-
-
-    </div><!-- /.wrapper -->
+      </div><!-- /.wrapper -->
 
       <div class="container">
-  <div class="site-footer" role="contentinfo">
-    <ul class="site-footer-links right">
-        <li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
-      <li><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
-      <li><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
-      <li><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
-        <li><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
-        <li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
-        <li><a href="https://help.github.com" data-ga-click="Footer, go to help, text:help">Help</a></li>
-
-    </ul>
-
-    <a href="https://github.com" aria-label="Homepage">
-      <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
-</a>
-    <ul class="site-footer-links">
-      <li>&copy; 2015 <span title="0.06342s from github-fe141-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
-        <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
-        <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
-        <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
-        <li><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact</a></li>
-    </ul>
-  </div>
-</div>
+      <div class="site-footer" role="contentinfo">
+        <ul class="site-footer-links right">
+          <li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+          <li><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
+          <li><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
+          <li><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+          <li><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+          <li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
+          <li><a href="https://help.github.com" data-ga-click="Footer, go to help, text:help">Help</a></li>
+        </ul>
+        <a href="https://github.com" aria-label="Homepage">
+          <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+        </a>
+        <ul class="site-footer-links">
+          <li>&copy; 2015 <span title="0.06342s from github-fe141-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+          <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+          <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+          <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
+          <li><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
 
 
     <div class="fullscreen-overlay js-fullscreen-overlay" id="fullscreen_overlay">
-  <div class="fullscreen-container js-suggester-container">
-    <div class="textarea-wrap">
-      <textarea name="fullscreen-contents" id="fullscreen-contents" class="fullscreen-contents js-fullscreen-contents" placeholder="" aria-label=""></textarea>
-      <div class="suggester-container">
-        <div class="suggester fullscreen-suggester js-suggester js-navigation-container"></div>
+      <div class="fullscreen-container js-suggester-container">
+        <div class="textarea-wrap">
+          <textarea name="fullscreen-contents" id="fullscreen-contents" class="fullscreen-contents js-fullscreen-contents" placeholder="" aria-label=""></textarea>
+          <div class="suggester-container">
+            <div class="suggester fullscreen-suggester js-suggester js-navigation-container"></div>
+          </div>
+        </div>
+      </div>
+      <div class="fullscreen-sidebar">
+        <a href="#" class="exit-fullscreen js-exit-fullscreen tooltipped tooltipped-w" aria-label="Exit Zen Mode">
+          <span class="mega-octicon octicon-screen-normal"></span>
+        </a>
+        <a href="#" class="theme-switcher js-theme-switcher tooltipped tooltipped-w"
+          aria-label="Switch themes">
+          <span class="octicon octicon-color-mode"></span>
+        </a>
       </div>
     </div>
-  </div>
-  <div class="fullscreen-sidebar">
-    <a href="#" class="exit-fullscreen js-exit-fullscreen tooltipped tooltipped-w" aria-label="Exit Zen Mode">
-      <span class="mega-octicon octicon-screen-normal"></span>
-    </a>
-    <a href="#" class="theme-switcher js-theme-switcher tooltipped tooltipped-w"
-      aria-label="Switch themes">
-      <span class="octicon octicon-color-mode"></span>
-    </a>
-  </div>
-</div>
-
-
-
-    
-    
-    
 
     <div id="ajax-error-message" class="flash flash-error">
       <span class="octicon octicon-alert"></span>
@@ -306,10 +229,9 @@ func WrapMarkdownHTML(markdown []byte) []byte {
     </div>
 
 
-      <script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/frameworks-60fa9d481f93b9638a55282fc13cd1e893f5da608855190c2259c5b35883105c.js"></script>
-      <script async="async" crossorigin="anonymous" src="https://assets-cdn.github.com/assets/github/index-4864e54542a25a0f1dc884a414b7fee9b624d1717ce4a61500d1e23907a794ac.js"></script>
-      
-      
+    <script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/frameworks-60fa9d481f93b9638a55282fc13cd1e893f5da608855190c2259c5b35883105c.js"></script>
+    <script async="async" crossorigin="anonymous" src="https://assets-cdn.github.com/assets/github/index-4864e54542a25a0f1dc884a414b7fee9b624d1717ce4a61500d1e23907a794ac.js"></script>
+       
   </body>
 </html>
 `)
