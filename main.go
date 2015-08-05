@@ -151,79 +151,19 @@ func WrapMarkdownHTML(markdown []byte) []byte {
                   <span class="author"><span itemprop="title">repoman</span></span><!--
                --><span class="path-divider">/</span><!--
                --><strong><a href="/" data-pjax="#js-repo-pjax-container">root</a></strong>
-
                   <span class="page-context-loader">
                     <img alt="" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
                   </span>
-
                 </h1>
               </div>
-
             </div>
           </div>
-
-      <div class="container">
-        <div class="repository-with-sidebar repo-container new-discussion-timeline ">
-          <div class="repository-sidebar clearfix">
+          <div class="container">
+            <div class="repository-with-sidebar repo-container new-discussion-timeline ">
+              <div class="repository-sidebar clearfix">
               
 
-<nav class="sunken-menu repo-nav js-repo-nav js-sidenav-container-pjax js-octicon-loaders"
-     role="navigation"
-     data-pjax="#js-repo-pjax-container"
-     data-issue-count-url="/timehop/wiki/issues/counts">
-  <ul class="sunken-menu-group">
-    <li class="tooltipped tooltipped-w" aria-label="Code">
-      <a href="/timehop/wiki" aria-label="Code" aria-selected="true" class="js-selected-navigation-item selected sunken-menu-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /timehop/wiki">
-        <span class="octicon octicon-code"></span> <span class="full-word">Code</span>
-        <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
-</a>    </li>
 
-      <li class="tooltipped tooltipped-w" aria-label="Issues">
-        <a href="/timehop/wiki/issues" aria-label="Issues" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /timehop/wiki/issues">
-          <span class="octicon octicon-issue-opened"></span> <span class="full-word">Issues</span>
-          <span class="js-issue-replace-counter"></span>
-          <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
-</a>      </li>
-
-    <li class="tooltipped tooltipped-w" aria-label="Pull requests">
-      <a href="/timehop/wiki/pulls" aria-label="Pull requests" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g p" data-selected-links="repo_pulls /timehop/wiki/pulls">
-          <span class="octicon octicon-git-pull-request"></span> <span class="full-word">Pull requests</span>
-          <span class="js-pull-replace-counter"></span>
-          <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
-</a>    </li>
-
-      <li class="tooltipped tooltipped-w" aria-label="Wiki">
-        <a href="/timehop/wiki/wiki" aria-label="Wiki" class="js-selected-navigation-item sunken-menu-item" data-hotkey="g w" data-selected-links="repo_wiki /timehop/wiki/wiki">
-          <span class="octicon octicon-book"></span> <span class="full-word">Wiki</span>
-          <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
-</a>      </li>
-  </ul>
-  <div class="sunken-menu-separator"></div>
-  <ul class="sunken-menu-group">
-
-    <li class="tooltipped tooltipped-w" aria-label="Pulse">
-      <a href="/timehop/wiki/pulse" aria-label="Pulse" class="js-selected-navigation-item sunken-menu-item" data-selected-links="pulse /timehop/wiki/pulse">
-        <span class="octicon octicon-pulse"></span> <span class="full-word">Pulse</span>
-        <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
-</a>    </li>
-
-    <li class="tooltipped tooltipped-w" aria-label="Graphs">
-      <a href="/timehop/wiki/graphs" aria-label="Graphs" class="js-selected-navigation-item sunken-menu-item" data-selected-links="repo_graphs repo_contributors /timehop/wiki/graphs">
-        <span class="octicon octicon-graph"></span> <span class="full-word">Graphs</span>
-        <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
-</a>    </li>
-  </ul>
-
-
-    <div class="sunken-menu-separator"></div>
-    <ul class="sunken-menu-group">
-      <li class="tooltipped tooltipped-w" aria-label="Settings">
-        <a href="/timehop/wiki/settings" aria-label="Settings" class="js-selected-navigation-item sunken-menu-item" data-selected-links="repo_settings repo_branch_settings hooks /timehop/wiki/settings">
-          <span class="octicon octicon-tools"></span> <span class="full-word">Settings</span>
-          <img alt="" class="mini-loader" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
-</a>      </li>
-    </ul>
-</nav>
 
                 <div class="only-with-full-nav">
                     
