@@ -143,34 +143,24 @@ func WrapMarkdownHTML(markdown []byte) []byte {
             </a>
           </div>
         </div>
+        <div class="site" itemscope itemtype="http://schema.org/WebPage">
+          <div class="pagehead repohead instapaper_ignore readability-menu ">
+            <div class="container">
+              <div class="clearfix">
+                <h1 itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title private ">
+                  <span class="author"><span itemprop="title">repoman</span></span><!--
+               --><span class="path-divider">/</span><!--
+               --><strong><a href="/" data-pjax="#js-repo-pjax-container">root</a></strong>
 
-        
+                  <span class="page-context-loader">
+                    <img alt="" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+                  </span>
 
-        
+                </h1>
+              </div>
 
-          <div class="site" itemscope itemtype="http://schema.org/WebPage">
-    <div class="pagehead repohead instapaper_ignore readability-menu ">
-      <div class="container">
-
-        <div class="clearfix">
-          
-
-          <h1 itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title private ">
-            <span class="mega-octicon octicon-lock"></span>
-            <span class="author"><a href="/timehop" class="url fn" itemprop="url" rel="author"><span itemprop="title">timehop</span></a></span><!--
-         --><span class="path-divider">/</span><!--
-         --><strong><a href="/timehop/wiki" data-pjax="#js-repo-pjax-container">wiki</a></strong>
-              <span class="repo-private-label">private</span>
-
-            <span class="page-context-loader">
-              <img alt="" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
-            </span>
-
-          </h1>
-        </div>
-
-      </div>
-    </div>
+            </div>
+          </div>
 
       <div class="container">
         <div class="repository-with-sidebar repo-container new-discussion-timeline ">
