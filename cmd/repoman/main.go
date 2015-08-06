@@ -20,7 +20,7 @@ import (
 
 func main() {
 	r := mux.NewRouter()
-	r.HandleFunc(`/{filename:.*}`, ServeFile).Methods("GET")
+	r.HandleFunc(`/{filename:.*}`, ServeStyledFile).Methods("GET")
 	log.Fatal(http.ListenAndServe(":9999", r))
 }
 
@@ -28,7 +28,7 @@ var (
 	wd, _ = os.Getwd()
 )
 
-func ServeFile(response http.ResponseWriter, request *http.Request) {
+func ServeStyledFile(response http.ResponseWriter, request *http.Request) {
 	filename := mux.Vars(request)["filename"]
 
 	fileToOpen := filename
@@ -78,19 +78,23 @@ func ServeFile(response http.ResponseWriter, request *http.Request) {
 			page.GFM = template.HTML(gfmBody)
 		}
 	case mode.IsDir():
-		fis, err := ioutil.ReadDir(fileToOpen)
+		subfis, err := ioutil.ReadDir(fileToOpen)
 		if err != nil {
 			http.Error(response, "Failed to read directory: "+err.Error(), http.StatusInternalServerError)
 			return
 		}
-		for _, fi := range fis {
-			file := repoman.File{
-				Name:  fi.Name(),
-				Path:  filename + string(os.PathSeparator) + fi.Name(),
-				IsDir: fi.IsDir(),
+		for _, subfi := range subfis {
+			path := "/" + subfi.Name()
+			if filename != "" {
+				path = "/" + filename + path
 			}
-			if strings.ToLower(fi.Name()) == "readme.md" {
-				gfmBody, err := ReadAsGFM(fileToOpen + string(os.PathSeparator) + fi.Name())
+			file := repoman.File{
+				Name:  subfi.Name(),
+				Path:  path,
+				IsDir: subfi.IsDir(),
+			}
+			if strings.ToLower(subfi.Name()) == "readme.md" {
+				gfmBody, err := ReadAsGFM(fileToOpen + string(os.PathSeparator) + subfi.Name())
 				if err != nil {
 					http.Error(response, "Failed to parse README as Github-flavored markdown: "+err.Error(), http.StatusInternalServerError)
 					return
@@ -112,13 +116,13 @@ func ServeFile(response http.ResponseWriter, request *http.Request) {
 func Breadcrumbs(filename string) []repoman.Breadcrumb {
 	var path string
 	crumbs := []repoman.Breadcrumb{}
-	components := strings.Split(filename, string(os.PathSeparator))
+	components := strings.Split(filename, "/")
 	for i, component := range components {
 		// Breadcrumbs never include the file's name itself
 		if i == len(components)-1 {
 			break
 		}
-		path += string(os.PathSeparator) + component
+		path += "/" + component
 		crumb := repoman.Breadcrumb{
 			Path: path,
 			Name: component,
