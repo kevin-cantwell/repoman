@@ -10,7 +10,9 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"strconv"
 	"strings"
+	"time"
 
 	"github.com/gorilla/mux"
 	"github.com/kevin-cantwell/repoman/templates"
@@ -107,56 +109,6 @@ func ServeFile(response http.ResponseWriter, request *http.Request) {
 	t.Execute(response, page)
 }
 
-// func ServeGFM(response http.ResponseWriter, request *http.Request) {
-// 	filename := mux.Vars(request)["filename"]
-
-// 	markdown, err := ioutil.ReadFile(filename)
-// 	if err != nil {
-// 		http.Error(response, "Failed to read markdown file: "+err.Error(), http.StatusInternalServerError)
-// 		return
-// 	}
-
-// 	body := map[string]string{
-// 		"text": string(markdown),
-// 		"mode": "gfm",
-// 	}
-// 	b, err := json.Marshal(body)
-// 	if err != nil {
-// 		http.Error(response, "Failed to build Github API request: "+err.Error(), http.StatusInternalServerError)
-// 		return
-// 	}
-
-// 	r, _ := http.NewRequest("POST", "https://api.github.com/markdown", bytes.NewReader(b))
-// 	r.Header.Set("Content-Type", "application/json")
-// 	resp, err := http.DefaultClient.Do(r)
-// 	if err != nil {
-// 		http.Error(response, "Error connecting to Github API: "+err.Error(), http.StatusInternalServerError)
-// 		return
-// 	}
-// 	defer func() {
-// 		if resp.Body != nil {
-// 			resp.Body.Close()
-// 		}
-// 	}()
-
-// 	if resp.StatusCode != 200 {
-// 		http.Error(response, "Error connecting to Github API: "+resp.Status, http.StatusBadGateway)
-// 		return
-// 	}
-
-// 	markdownBody, err := ioutil.ReadAll(resp.Body)
-// 	page := templates.GithubPage{
-// 		GFM: template.HTML(markdownBody),
-// 	}
-
-// 	t, err := template.New("gfm").Parse(templates.GithubTemplate)
-// 	if err != nil {
-// 		http.Error(response, "Error parsing Github-flavored markdown template: "+err.Error(), http.StatusInternalServerError)
-// 		return
-// 	}
-// 	t.Execute(response, page)
-// }
-
 func Breadcrumbs(filename string) []templates.Breadcrumb {
 	var path string
 	crumbs := []templates.Breadcrumb{}
@@ -191,6 +143,7 @@ func ReadAsGFM(filename string) ([]byte, error) {
 		return nil, err
 	}
 
+	log.Printf("Posting %v to Github's API for markdown processing...\n", filename)
 	r, _ := http.NewRequest("POST", "https://api.github.com/markdown", bytes.NewReader(b))
 	r.Header.Set("Content-Type", "application/json")
 	resp, err := http.DefaultClient.Do(r)
@@ -202,6 +155,14 @@ func ReadAsGFM(filename string) ([]byte, error) {
 			resp.Body.Close()
 		}
 	}()
+
+	reset, _ := strconv.ParseInt(resp.Header.Get("X-RateLimit-Reset"), 10, 64)
+	log.Printf(
+		"Github API rate limits: limit=%v, remaining=%v, reset=%v",
+		resp.Header.Get("X-RateLimit-Limit"),
+		resp.Header.Get("X-RateLimit-Remaining"),
+		(time.Unix(reset, 0).Sub(time.Now())/time.Second)*time.Second, // Truncate sub-second values.
+	)
 
 	if resp.StatusCode != 200 {
 		return nil, errors.New("error: unexpected response from github api: " + resp.Status)
