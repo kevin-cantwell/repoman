@@ -26,10 +26,9 @@ The server is available at `localhost:9999`.
 
 # TODOs
 
-So many...
-
-* Render directory listings with Github styles, just like on Github.
-* Auto-render anything named README.md below directory listings if the directory contains such a filename, just like on Github.
-* Fix breadcrumbs to accurately display the current path to a given file.
+* ~~Render directory listings with Github styles, just like on Github.~~
+  * Sort files directory-first
+* ~~Auto-render anything named README.md below directory listings if the directory contains such a filename, just like on Github.~~
+* ~~Fix breadcrumbs to accurately display the current path to a given file.~~
 * Render code files with syntax highlighting and Github styles, just like on Github.
 * Render binary files and images with Github styles, just like on Github.
