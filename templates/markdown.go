@@ -3,8 +3,17 @@ package templates
 import "html/template"
 
 type GithubPage struct {
-	GFM   template.HTML
-	Files []File
+	RepoName     string
+	BaseFilename string
+	IsDir        bool
+	Breadcrumbs  []Breadcrumb
+	Files        []File
+	GFM          template.HTML
+}
+
+type Breadcrumb struct {
+	Path string
+	Name string
 }
 
 type File struct {
@@ -102,12 +111,25 @@ var GithubTemplate = `
                     <span class="repo-root js-repo-root">
                       <span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
                         <a href="/" class="" data-branch="master" data-pjax="true" itemscope="url">
-                          <span itemprop="title">root</span>
+                          <span itemprop="title">{{ .RepoName }}</span>
                         </a>
                       </span>
                     </span>
                     <span class="separator">/</span>
-                    <strong class="final-path">README.md</strong>
+                    {{ range $index, $crumb := .Breadcrumbs }}
+                      <span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                        <a href="{{ $crumb.Path }}" class="" data-branch="master" data-pjax="true" itemscope="url">
+                          <span itemprop="title">{{ $crumb.Name }}</span>
+                        </a>
+                      </span>
+                      <span class="separator">/</span>
+                    {{ end }}
+                    {{ if (ne (len .BaseFilename) 0) }}
+                      <strong class="final-path">{{ .BaseFilename }}</strong>
+                      {{ if .IsDir }}
+                        <span class="separator">/</span>
+                      {{ end }}
+                    {{ end }}
                   </div>
                 </div>
 
@@ -152,20 +174,22 @@ var GithubTemplate = `
                   </div>
                 {{ end }}
 
-                <div class="file">
-                  <div class="file-header">
-                    <div class="file-actions">
+                {{ if (ne (len .GFM) 0) }}
+                  <div class="file">
+                    <div class="file-header">
+                      <div class="file-actions">
+                      </div>
+                      <div class="file-info">
+                          &nbsp;
+                      </div>
                     </div>
-                    <div class="file-info">
-                        &nbsp;
+                    <div id="readme" class="blob instapaper_body">
+                      <article class="markdown-body entry-content" itemprop="mainContentOfPage">
+                        {{.GFM}}
+                      </article>
                     </div>
                   </div>
-                  <div id="readme" class="blob instapaper_body">
-                    <article class="markdown-body entry-content" itemprop="mainContentOfPage">
-                      {{.GFM}}
-                    </article>
-                  </div>
-                </div>
+                {{ end }}
               </div>
             </div>
             <div class="modal-backdrop"></div>
