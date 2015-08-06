@@ -2,11 +2,18 @@ package templates
 
 import "html/template"
 
-type GFMPage struct {
-	MarkdownBody template.HTML
+type GithubPage struct {
+	GFM   template.HTML
+	Files []File
 }
 
-var GFM = `
+type File struct {
+	Name  string
+	Path  string
+	IsDir bool
+}
+
+var GithubTemplate = `
 <!DOCTYPE html>
 <html lang="en" class=" is-copy-enabled">
   <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
@@ -92,9 +99,58 @@ var GFM = `
               <div id="js-repo-pjax-container" class="repository-content context-loader-container" data-pjax-container>
                 <div class="file-navigation js-zeroclipboard-container">
                   <div class="breadcrumb js-zeroclipboard-target">
-                    <span class="repo-root js-repo-root"><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/" class="" data-branch="master" data-pjax="true" itemscope="url"><span itemprop="title">root</span></a></span></span><span class="separator">/</span><strong class="final-path">README.md</strong>
+                    <span class="repo-root js-repo-root">
+                      <span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                        <a href="/" class="" data-branch="master" data-pjax="true" itemscope="url">
+                          <span itemprop="title">root</span>
+                        </a>
+                      </span>
+                    </span>
+                    <span class="separator">/</span>
+                    <strong class="final-path">README.md</strong>
                   </div>
                 </div>
+
+                {{ if (ne (len .Files) 0) }}
+                  <div class="commit commit-tease js-details-container" >
+                    <p class="commit-title ">
+                      &nbsp;
+                    </p>
+                    <div class="commit-meta">
+                      <div class="authorship">
+                        &nbsp;
+                      </div>
+                    </div>
+                  </div>
+                  <div class="file-wrap">
+                    <table class="files" data-pjax>
+                      <tbody>
+                        {{ range $index, $file := .Files }}
+                          <tr>
+                            <td class="icon">
+                              {{ if $file.IsDir }}
+                                <span class="octicon octicon-file-directory"></span>
+                              {{ else }}
+                                <span class="octicon octicon-file-text"></span>
+                              {{ end}}
+                            </td>
+                            <td class="content">
+                              <span class="css-truncate css-truncate-target"><a href="{{ $file.Path }}" class="js-directory-link" title="{{ $file.Name }}">{{ $file.Name }}</a></span>
+                            </td>
+                            <td class="message">
+                              <span class="css-truncate css-truncate-target">
+                                &nbsp;
+                              </span>
+                            </td>
+                            <td class="age">
+                              &nbsp;
+                            </td>
+                          </tr>
+                        {{ end }}
+                      </tbody>
+                    </table>
+                  </div>
+                {{ end }}
 
                 <div class="file">
                   <div class="file-header">
@@ -106,7 +162,7 @@ var GFM = `
                   </div>
                   <div id="readme" class="blob instapaper_body">
                     <article class="markdown-body entry-content" itemprop="mainContentOfPage">
-                      {{.MarkdownBody}}
+                      {{.GFM}}
                     </article>
                   </div>
                 </div>
