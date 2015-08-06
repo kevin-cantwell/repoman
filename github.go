@@ -1,4 +1,4 @@
-package templates
+package repoman
 
 import "html/template"
 

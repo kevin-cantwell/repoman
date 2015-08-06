@@ -11,7 +11,7 @@ The primary purpose of this tool is to serve markdown files over HTTP and render
 From your terminal, run:
 
 ```bash
-$ go get -u github.com/kevin-cantwell/repoman
+$ go get -u github.com/kevin-cantwell/repoman/cmd/repoman
 ```
 
 # Usage

@@ -15,7 +15,7 @@ import (
 	"time"
 
 	"github.com/gorilla/mux"
-	"github.com/kevin-cantwell/repoman/templates"
+	"github.com/kevin-cantwell/repoman"
 )
 
 func main() {
@@ -54,12 +54,12 @@ func ServeFile(response http.ResponseWriter, request *http.Request) {
 		baseFilename = ""
 	}
 
-	page := templates.GithubPage{
+	page := repoman.GithubPage{
 		RepoName:     filepath.Base(wd),
 		BaseFilename: baseFilename,
 		IsDir:        fi.IsDir(),
 		Breadcrumbs:  Breadcrumbs(filename),
-		Files:        []templates.File{},
+		Files:        []repoman.File{},
 	}
 
 	switch mode := fi.Mode(); {
@@ -84,7 +84,7 @@ func ServeFile(response http.ResponseWriter, request *http.Request) {
 			return
 		}
 		for _, fi := range fis {
-			file := templates.File{
+			file := repoman.File{
 				Name:  fi.Name(),
 				Path:  filename + string(os.PathSeparator) + fi.Name(),
 				IsDir: fi.IsDir(),
@@ -101,7 +101,7 @@ func ServeFile(response http.ResponseWriter, request *http.Request) {
 		}
 	}
 
-	t, err := template.New("github").Parse(templates.GithubTemplate)
+	t, err := template.New("github").Parse(repoman.GithubTemplate)
 	if err != nil {
 		http.Error(response, "Error parsing Github-flavored markdown template: "+err.Error(), http.StatusInternalServerError)
 		return
@@ -109,9 +109,9 @@ func ServeFile(response http.ResponseWriter, request *http.Request) {
 	t.Execute(response, page)
 }
 
-func Breadcrumbs(filename string) []templates.Breadcrumb {
+func Breadcrumbs(filename string) []repoman.Breadcrumb {
 	var path string
-	crumbs := []templates.Breadcrumb{}
+	crumbs := []repoman.Breadcrumb{}
 	components := strings.Split(filename, string(os.PathSeparator))
 	for i, component := range components {
 		// Breadcrumbs never include the file's name itself
@@ -119,7 +119,7 @@ func Breadcrumbs(filename string) []templates.Breadcrumb {
 			break
 		}
 		path += string(os.PathSeparator) + component
-		crumb := templates.Breadcrumb{
+		crumb := repoman.Breadcrumb{
 			Path: path,
 			Name: component,
 		}
