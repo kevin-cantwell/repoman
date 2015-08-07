@@ -20,6 +20,12 @@ import (
 
 func main() {
 	r := mux.NewRouter()
+	r.HandleFunc("/assets/github/index.css", ServeGithubCSS).Methods("GET")
+	r.HandleFunc("/assets/github2/index.css", ServeGithub2CSS).Methods("GET")
+	r.HandleFunc("/assets/octicons/octicons/octicons.woff", ServeFontFaceWOFF).Methods("GET")
+	r.HandleFunc("/assets/octicons/octicons/octicons.eot", ServeFontFaceEOT).Methods("GET")
+	r.HandleFunc("/assets/octicons/octicons/octicons.ttf", ServeFontFaceTTF).Methods("GET")
+	r.HandleFunc("/assets/octicons/octicons/octicons.svg", ServeFontFaceSVG).Methods("GET")
 	r.HandleFunc(`/{filename:.*}`, ServeStyledFile).Methods("GET")
 	log.Fatal(http.ListenAndServe(":9999", r))
 }
@@ -27,6 +33,36 @@ func main() {
 var (
 	wd, _ = os.Getwd()
 )
+
+func ServeGithubCSS(response http.ResponseWriter, request *http.Request) {
+	response.Header().Set("Content-Type", "text/css")
+	response.Write(repoman.GithubCSS)
+}
+
+func ServeGithub2CSS(response http.ResponseWriter, request *http.Request) {
+	response.Header().Set("Content-Type", "text/css")
+	response.Write(repoman.Github2CSS)
+}
+
+func ServeFontFaceWOFF(response http.ResponseWriter, request *http.Request) {
+	response.Header().Set("Content-Type", "application/octet-stream")
+	response.Write(repoman.OcticonsWOFF)
+}
+
+func ServeFontFaceEOT(response http.ResponseWriter, request *http.Request) {
+	response.Header().Set("Content-Type", "application/octet-stream")
+	response.Write(repoman.OcticonsEOT)
+}
+
+func ServeFontFaceTTF(response http.ResponseWriter, request *http.Request) {
+	response.Header().Set("Content-Type", "application/octet-stream")
+	response.Write(repoman.OcticonsTTF)
+}
+
+func ServeFontFaceSVG(response http.ResponseWriter, request *http.Request) {
+	response.Header().Set("Content-Type", "application/octet-stream")
+	response.Write(repoman.OcticonsSVG)
+}
 
 func ServeStyledFile(response http.ResponseWriter, request *http.Request) {
 	filename := mux.Vars(request)["filename"]

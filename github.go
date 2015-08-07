@@ -73,8 +73,8 @@ var GithubTemplate = `
     <meta content="T6UAYcu/kk7ROPCtRj+IeFJX1g1vxNVcxhs85+tWQeC33xRw3ZX7vU90YDAO4nMdMr656WYKA4R6B5MvbGHBug==" name="csrf-token" />
     
 
-    <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github/index-a6099c44cba81e3cc01a25d5aad205f2dd86c56ad656d0ee72761a3db28828c5.css" media="all" rel="stylesheet" />
-    <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github2/index-e7262cad01eef2691501230e7d70c976a8e97c8a96842f0f29a1f20f658a315d.css" media="all" rel="stylesheet" />
+    <link crossorigin="anonymous" href="/assets/github/index.css" media="all" rel="stylesheet" />
+    <link crossorigin="anonymous" href="/assets/github2/index.css" media="all" rel="stylesheet" />
     
     
 
