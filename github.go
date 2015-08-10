@@ -7,7 +7,7 @@ type GithubPage struct {
 	BaseFilename string
 	IsDir        bool
 	Breadcrumbs  []Breadcrumb
-	Files        []File
+	Files        Files
 	GFM          template.HTML
 }
 
@@ -20,6 +20,25 @@ type File struct {
 	Name  string
 	Path  string
 	IsDir bool
+}
+
+// Files exists to support sorting. On Github, the folders are listed first, then the files.
+// Otherwise, everything is alphabetical.
+type Files []File
+
+func (f Files) Len() int {
+	return len(f)
+}
+
+func (f Files) Less(i, j int) bool {
+	if f[i].IsDir && !f[j].IsDir {
+		return true
+	}
+	return f[i].Name[0] < f[j].Name[0]
+}
+
+func (f Files) Swap(i, j int) {
+	f[i], f[j] = f[j], f[i]
 }
 
 var GithubTemplate = `

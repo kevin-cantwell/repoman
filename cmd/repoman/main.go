@@ -10,6 +10,7 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"sort"
 	"strconv"
 	"strings"
 	"time"
@@ -95,7 +96,7 @@ func ServeStyledFile(response http.ResponseWriter, request *http.Request) {
 		BaseFilename: baseFilename,
 		IsDir:        fi.IsDir(),
 		Breadcrumbs:  Breadcrumbs(filename),
-		Files:        []repoman.File{},
+		Files:        repoman.Files{},
 	}
 
 	switch mode := fi.Mode(); {
@@ -120,6 +121,9 @@ func ServeStyledFile(response http.ResponseWriter, request *http.Request) {
 			return
 		}
 		for _, subfi := range subfis {
+			if subfi.Name() == ".git" {
+				continue
+			}
 			path := "/" + subfi.Name()
 			if filename != "" {
 				path = "/" + filename + path
@@ -139,6 +143,8 @@ func ServeStyledFile(response http.ResponseWriter, request *http.Request) {
 			}
 			page.Files = append(page.Files, file)
 		}
+
+		sort.Sort(page.Files)
 	}
 
 	t, err := template.New("github").Parse(repoman.GithubTemplate)
