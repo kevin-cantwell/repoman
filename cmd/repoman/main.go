@@ -27,6 +27,8 @@ func main() {
 	r.HandleFunc("/assets/octicons/octicons/octicons.eot", ServeFontFaceEOT).Methods("GET")
 	r.HandleFunc("/assets/octicons/octicons/octicons.ttf", ServeFontFaceTTF).Methods("GET")
 	r.HandleFunc("/assets/octicons/octicons/octicons.svg", ServeFontFaceSVG).Methods("GET")
+	r.HandleFunc("/assets/prism.css", ServePrismCSS).Methods("GET")
+	r.HandleFunc("/assets/prism.js", ServePrismJS).Methods("GET")
 	r.HandleFunc(`/{filename:.*}`, ServeStyledFile).Methods("GET")
 	log.Fatal(http.ListenAndServe(":9999", r))
 }
@@ -34,6 +36,16 @@ func main() {
 var (
 	wd, _ = os.Getwd()
 )
+
+func ServePrismCSS(response http.ResponseWriter, request *http.Request) {
+	response.Header().Set("Content-Type", "text/css")
+	response.Write(repoman.PrismCSS)
+}
+
+func ServePrismJS(response http.ResponseWriter, request *http.Request) {
+	response.Header().Set("Content-Type", "text/javascript")
+	response.Write(repoman.PrismJS)
+}
 
 func ServeGithubCSS(response http.ResponseWriter, request *http.Request) {
 	response.Header().Set("Content-Type", "text/css")
@@ -102,9 +114,13 @@ func ServeStyledFile(response http.ResponseWriter, request *http.Request) {
 	switch mode := fi.Mode(); {
 	case mode.IsRegular():
 		if !strings.HasSuffix(fi.Name(), ".md") {
-			// If it's not a markdown file...
-			http.ServeFile(response, request, fileToOpen)
-			return
+			body, err := ioutil.ReadFile(filename)
+			if err != nil {
+				http.Error(response, "Failed to parse file: "+err.Error(), http.StatusInternalServerError)
+				return
+			}
+			page.FileBody = string(body)
+			page.Language = DeterminePrismLanguage(filepath.Ext(fi.Name()))
 		} else {
 			// If it is a markdown file...
 			gfmBody, err := ReadAsGFM(fileToOpen)
@@ -153,6 +169,19 @@ func ServeStyledFile(response http.ResponseWriter, request *http.Request) {
 		return
 	}
 	t.Execute(response, page)
+}
+
+func DeterminePrismLanguage(ext string) string {
+	switch strings.ToLower(ext) {
+	case ".go":
+		return "go"
+	case ".rb":
+		return "ruby"
+	case ".java":
+		return "java"
+	default:
+		return "auto"
+	}
 }
 
 func Breadcrumbs(filename string) []repoman.Breadcrumb {
