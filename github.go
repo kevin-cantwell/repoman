@@ -42,6 +42,9 @@ func (f Files) Less(i, j int) bool {
 	if f[i].IsDir && !f[j].IsDir {
 		return true
 	}
+	if !f[i].IsDir && f[j].IsDir {
+		return false
+	}
 	return f[i].Name[0] < f[j].Name[0]
 }
 
