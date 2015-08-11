@@ -106,16 +106,15 @@ var GithubTemplate = `
 
   <body class="logged_in  env-production macintosh vis-private page-blob">
     <div class="wrapper">
-        <div class="header header-logged-in true" role="banner">
-          <div class="container clearfix">
-            <a class="header-logo-invertocat" href="https://github.com/" data-hotkey="g d" aria-label="Homepage" data-ga-click="Header, go to dashboard, icon:logo">
-              <span class="mega-octicon octicon-mark-github"></span>
-            </a>
-          </div>
+      <div class="header header-logged-in true" role="banner">
+        <div class="container clearfix">
+          <a class="header-logo-invertocat" href="https://github.com/" data-hotkey="g d" aria-label="Homepage" data-ga-click="Header, go to dashboard, icon:logo">
+            <span class="mega-octicon octicon-mark-github"></span>
+          </a>
         </div>
+      </div>
         <div class="site" itemscope itemtype="http://schema.org/WebPage">
           <div class="pagehead repohead instapaper_ignore readability-menu ">
-            
           </div>
           <div class="container">
             <div class="repository-with-sidebar repo-container new-discussion-timeline ">
@@ -188,14 +187,15 @@ var GithubTemplate = `
                   </div>
                 {{ end }}
 
-                <div class="file">
-                  <div class="file-header">
-                    <div class="file-actions">
+                {{ if or (ne (len .GFM) 0) (ne (len .FileBody) 0) }}
+                  <div class="file">
+                    <div class="file-header">
+                      <div class="file-actions">
+                      </div>
+                      <div class="file-info">
+                          &nbsp;
+                      </div>
                     </div>
-                    <div class="file-info">
-                        &nbsp;
-                    </div>
-                  </div>
                     {{ if (ne (len .GFM) 0) }}
                       <div id="readme" class="blob instapaper_body">
                         <article class="markdown-body entry-content" itemprop="mainContentOfPage">
@@ -207,10 +207,12 @@ var GithubTemplate = `
                         <pre class="line-numbers"><code class="language-{{ .Language }}" style="display:inline-block">{{ .FileBody }}</code></pre>
                       </div>
                     {{ end }}
-                </div>
+                  </div>
+                {{ end }}
               </div>
             </div>
-            <div class="modal-backdrop"></div>
+            <div class="modal-backdrop">
+            </div>
           </div>
         </div>
       </div><!-- /.wrapper -->

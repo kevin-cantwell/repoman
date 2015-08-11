@@ -175,10 +175,20 @@ func DeterminePrismLanguage(ext string) string {
 	switch strings.ToLower(ext) {
 	case ".go":
 		return "go"
-	case ".rb":
+	case ".rb", ".ru", ".erb":
 		return "ruby"
 	case ".java":
 		return "java"
+	case ".js", ".json":
+		return "javascript"
+	case ".yaml", ".yml":
+		return "yaml"
+	case ".sql":
+		return "sql"
+	case ".sh", ".bash", ".zsh":
+		return "bash"
+	case ".xml", ".html":
+		return "markup"
 	default:
 		return "auto"
 	}
